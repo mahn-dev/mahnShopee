@@ -25,16 +25,17 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         />
+        <link rel="stylesheet" href="./assets/css/grid.css" />
         <link rel="stylesheet" href="./assets/css/base.css" />
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <link rel="stylesheet" href="./assets/css/responsive.css" />
         <title>mahnshopee</title>
     </head>
     <body>
         <div class="app">
             <header class="header">
-                <!-- Thẻ grid để tự động căn giữa các phần tử vào giữa màn hình và cố định chiều dài bằng 1200px -->
-                <div class="grid">
-                    <nav class="header__navbar">
+                <div class="grid wide">
+                    <nav class="header__navbar hide-on-mobile-tablet">
                         <ul class="header__navbar-list">
                             <li class="header__navbar-item header__navbar-item--separation">Kênh Người Bán</li>
                             <li class="header__navbar-item header__navbar-item--separation">
@@ -217,7 +218,15 @@
                     <!-- Header with search -->
 
                     <div class="header-with-search">
-                        <div class="header__logo">
+                        <div class="header__mobile-action">
+                            <label for="mobile-bar-checkbox" class="header__mobile-bar">
+                                <i class="header__mobile-bar-icon fa-solid fa-bars"></i>
+                            </label>
+                            <label for="mobile-seacrh-checkbox" class="header__mobile-search">
+                                <i class="header__mobile-search-icon fa-solid fa-magnifying-glass"></i>
+                            </label>
+                        </div>
+                        <div class="header__logo hide-on-tablet">
                             <a href="" class="header__logo-link">
                                 <svg viewBox="0 0 192 65" class="header__logo-img">
                                     <g fill-rule="evenodd">
@@ -229,6 +238,8 @@
                                 </svg>
                             </a>
                         </div>
+
+                        <input type="checkbox" hidden id="mobile-seacrh-checkbox" class="header__search-checkbox" />
 
                         <div class="header__search">
                             <div class="header__search-input-wrap">
@@ -242,22 +253,12 @@
                                         <li class="header__search-history-item">
                                             <a href="">Gaming Gear</a>
                                         </li>
-                                        <li class="header__search-history-item">
-                                            <a href="">Gaming Gear</a>
-                                        </li>
-                                        <li class="header__search-history-item">
-                                            <a href="">Gaming Gear</a>
-                                        </li>
-                                        <li class="header__search-history-item">
-                                            <a href="">Gaming Gear</a>
-                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="header__search-select">
                                 <span class="header__search-select-label">Trong Shop</span>
                                 <i class="header__search-select-icon fa-solid fa-angle-down"></i>
-
                                 <ul class="header__search-option">
                                     <li class="header__search-option-item header__search-option-item--active">
                                         <span>Trong Shop</span>
@@ -290,60 +291,6 @@
                                         <!-- CART ITEM -->
                                         <li class="header__cart-item">
                                             <img
-                                                src="https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/0c98030b9e3cc4219e8ff1f965aab794"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
                                                 src="https://cf.shopee.vn/file/9758e29868f9317a48a785e6010050c8"
                                                 alt=""
                                                 class="header__cart-img"
@@ -360,7 +307,6 @@
                                                         <span class="header__cart-item-qnt">10</span>
                                                     </div>
                                                 </div>
-
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-description">
                                                         Bàn phím cơ K100
@@ -387,169 +333,6 @@
                                                         <span class="header__cart-item-qnt">10</span>
                                                     </div>
                                                 </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
-                                                <div class="header__cart-item-body">
-                                                    <span class="header__cart-item-description">
-                                                        Bàn phím cơ K100
-                                                    </span>
-                                                    <span class="header__cart-item-remove">Xóa</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li class="header__cart-item">
-                                            <img
-                                                src="https://cf.shopee.vn/file/44149e88c5a9fd60c46ae8d71a42c408"
-                                                alt=""
-                                                class="header__cart-img"
-                                            />
-                                            <div class="header__cart-item-info">
-                                                <div class="header__cart-item-head">
-                                                    <h5 class="header__cart-item-name">
-                                                        Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104
-                                                        phím.
-                                                    </h5>
-                                                    <div class="header__cart-item-price-wrap">
-                                                        <span class="header__cart-item-price">425.000đ</span>
-                                                        <span class="header__cart-item-multifly">x</span>
-                                                        <span class="header__cart-item-qnt">10</span>
-                                                    </div>
-                                                </div>
-
                                                 <div class="header__cart-item-body">
                                                     <span class="header__cart-item-description">
                                                         Bàn phím cơ K100
@@ -559,18 +342,31 @@
                                             </div>
                                         </li>
                                     </ul>
-
                                     <a href="#" class="header__cart-view-cart btn btn--primary">Xem giỏ hàng</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <ul class="header__sort-bar">
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Liên quan</a>
+                    </li>
+                    <li class="header__sort-item header__sort-item--active">
+                        <a href="" class="header__sort-link">Mới nhất</a>
+                    </li>
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Bán chạy</a>
+                    </li>
+                    <li class="header__sort-item">
+                        <a href="" class="header__sort-link">Giá</a>
+                    </li>
+                </ul>
             </header>
             <div class="app__container">
-                <div class="grid">
-                    <div class="grid__row app__content">
-                        <div class="grid__column-2">
+                <div class="grid wide">
+                    <div class="row sm-gutter app__content">
+                        <div class="col l-2 m-0 c-0">
                             <nav class="category">
                                 <h3 class="category__heading">
                                     <i class="category__heading-icon fa-solid fa-list-ul"></i>
@@ -583,7 +379,7 @@
                                     <li class="category-item">
                                         <a href="" class="category-item__link">Chuột không dây</a>
                                     </li>
-                                    <li class="category-item">
+                                    <li classhome-filter="category-item">
                                         <a href="" class="category-item__link">Tai nghe RGB</a>
                                     </li>
                                     <li class="category-item">
@@ -592,8 +388,8 @@
                                 </ul>
                             </nav>
                         </div>
-                        <div class="grid__column-10">
-                            <div class="home-filter">
+                        <div class="col l-10 m-12 c-12">
+                            <div class="home-filter hide-on-mobile-tablet">
                                 <span class="home-filter__label">Sắp xếp theo</span>
                                 <button class="home-filter__btn btn">Phổ biến</button>
                                 <button class="home-filter__btn btn btn--primary">Mới nhất</button>
@@ -628,10 +424,69 @@
                                 </div>
                             </div>
 
+                            <nav class="mobile-category">
+                                <ul class="mobile-category__list">
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                    <li class="mobile-category__item">
+                                        <a href="" class="mobile-category__link">Dụng cụ & Thiết bị tiện ích</a>
+                                    </li>
+                                </ul>
+                            </nav>
+
                             <div class="home-product">
-                                <div class="grid__row">
+                                <div class="row sm-gutter">
                                     <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -677,8 +532,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -724,8 +578,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -771,8 +624,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -818,8 +670,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -865,8 +716,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -912,8 +762,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -959,8 +808,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -1006,8 +854,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -1053,8 +900,237 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <!-- PRODUCT ITEM -->
-                                    <div class="grid__column-2-4">
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a href="" class="home-product-item">
+                                            <div
+                                                class="home-product-item__img"
+                                                style="
+                                                    background-image: url(https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb);
+                                                "
+                                            ></div>
+                                            <h4 class="home-product-item__name">
+                                                Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104 phím.
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">1.234.567đ</span>
+                                                <span class="home-product-item__price-current">123.456đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i
+                                                        class="home-product-item__like-icon-empty fa-regular fa-heart"
+                                                    ></i>
+                                                    <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">69 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Asus</span>
+                                                <span class="home-product-item__origin-name">Tàu khựa</span>
+                                            </div>
+
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a href="" class="home-product-item">
+                                            <div
+                                                class="home-product-item__img"
+                                                style="
+                                                    background-image: url(https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb);
+                                                "
+                                            ></div>
+                                            <h4 class="home-product-item__name">
+                                                Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104 phím.
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">1.234.567đ</span>
+                                                <span class="home-product-item__price-current">123.456đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i
+                                                        class="home-product-item__like-icon-empty fa-regular fa-heart"
+                                                    ></i>
+                                                    <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">69 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Asus</span>
+                                                <span class="home-product-item__origin-name">Tàu khựa</span>
+                                            </div>
+
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a href="" class="home-product-item">
+                                            <div
+                                                class="home-product-item__img"
+                                                style="
+                                                    background-image: url(https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb);
+                                                "
+                                            ></div>
+                                            <h4 class="home-product-item__name">
+                                                Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104 phím.
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">1.234.567đ</span>
+                                                <span class="home-product-item__price-current">123.456đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i
+                                                        class="home-product-item__like-icon-empty fa-regular fa-heart"
+                                                    ></i>
+                                                    <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">69 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Asus</span>
+                                                <span class="home-product-item__origin-name">Tàu khựa</span>
+                                            </div>
+
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a href="" class="home-product-item">
+                                            <div
+                                                class="home-product-item__img"
+                                                style="
+                                                    background-image: url(https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb);
+                                                "
+                                            ></div>
+                                            <h4 class="home-product-item__name">
+                                                Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104 phím.
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">1.234.567đ</span>
+                                                <span class="home-product-item__price-current">123.456đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i
+                                                        class="home-product-item__like-icon-empty fa-regular fa-heart"
+                                                    ></i>
+                                                    <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">69 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Asus</span>
+                                                <span class="home-product-item__origin-name">Tàu khựa</span>
+                                            </div>
+
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-4 c-6">
+                                        <a href="" class="home-product-item">
+                                            <div
+                                                class="home-product-item__img"
+                                                style="
+                                                    background-image: url(https://cf.shopee.vn/file/f517f38776e2717709d5e1f381b988bb);
+                                                "
+                                            ></div>
+                                            <h4 class="home-product-item__name">
+                                                Bàn Phím Cơ K100 Led 12 Chế Độ Phím Cơ Blue Switch Full size 104 phím.
+                                            </h4>
+                                            <div class="home-product-item__price">
+                                                <span class="home-product-item__price-old">1.234.567đ</span>
+                                                <span class="home-product-item__price-current">123.456đ</span>
+                                            </div>
+                                            <div class="home-product-item__action">
+                                                <span class="home-product-item__like home-product-item__like--liked">
+                                                    <i
+                                                        class="home-product-item__like-icon-empty fa-regular fa-heart"
+                                                    ></i>
+                                                    <i class="home-product-item__like-icon-fill fa-solid fa-heart"></i>
+                                                </span>
+                                                <div class="home-product-item__rating">
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="home-product-item__star--gold fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <span class="home-product-item__sold">69 đã bán</span>
+                                            </div>
+                                            <div class="home-product-item__origin">
+                                                <span class="home-product-item__brand">Asus</span>
+                                                <span class="home-product-item__origin-name">Tàu khựa</span>
+                                            </div>
+
+                                            <div class="home-product-item__favourite">
+                                                <i class="fa-solid fa-check"></i>
+                                                <span>Yêu thích</span>
+                                            </div>
+                                            <div class="home-product-item__sale-off">
+                                                <span class="home-product-item__sale-off-percent">10%</span>
+                                                <span class="home-product-item__sale-off-label">GIẢM</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col l-2-4 m-4 c-6">
                                         <a href="" class="home-product-item">
                                             <div
                                                 class="home-product-item__img"
@@ -1141,9 +1217,9 @@
                 </div>
             </div>
             <footer class="footer">
-                <div class="grid">
-                    <div class="grid__row">
-                        <div class="grid__column-2-4">
+                <div class="grid wide footer__content">
+                    <div class="row">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Chăm sóc khách hàng</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1157,7 +1233,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Về mahnShop</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1171,10 +1247,10 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Danh mục</h3>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-4 c-6">
                             <h3 class="footer__heading">Theo dõi</h3>
                             <ul class="footer__list">
                                 <li class="footer__item">
@@ -1197,7 +1273,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="grid__column-2-4">
+                        <div class="col l-2-4 m-8 c-12">
                             <h3 class="footer__heading">Vào cửa hàng trên ứng dụng</h3>
                             <div class="footer__download">
                                 <img src="./assets/img/qr_code.png" alt="" class="footer__download-qr" />
@@ -1218,7 +1294,7 @@
                     </div>
                 </div>
                 <div class="footer__bottom">
-                    <div class="grid">
+                    <div class="grid wide">
                         <p class="footer__text">© 2022 - Bản quyền thuộc về Công ty TNHH mahnDev</p>
                     </div>
                 </div>

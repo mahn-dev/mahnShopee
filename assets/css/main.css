@@ -1,3 +1,7 @@
+.app {
+    overflow: hidden;
+}
+
 .header {
     /* Đặt chiều cao cho header */
     height: var(--header-height);
@@ -293,9 +297,6 @@
     padding-left: 0;
 }
 
-.header__notify-item {
-}
-
 .header__notify-item--not-seen {
     background-color: rgba(254, 241, 238, 0.6);
 }
@@ -332,9 +333,6 @@
     color: #666;
     line-height: 1.6rem;
     font-size: 1.2rem;
-}
-
-.header__notify-footer {
 }
 
 .header__notify-footer-btn {
@@ -480,10 +478,35 @@
 /* Header with search */
 
 .header-with-search {
+    position: relative;
+    z-index: 10;
     height: var(--header-with-search-height);
     display: flex;
     align-items: center;
     padding: 0 8px;
+}
+
+.header__mobile-action {
+    display: none;
+}
+
+.header__mobile-bar,
+.header__mobile-search {
+    margin: 0 12px;
+}
+
+.header__mobile-bar-icon,
+.header__mobile-search-icon {
+    font-size: 2.6rem;
+    color: var(--white-color);
+}
+
+.header__mobile-search {
+    display: block;
+    height: 100%;
+}
+
+.header__mobile-search-icon {
 }
 
 .header__logo {
@@ -497,6 +520,8 @@
 .header__logo-link {
     color: transparent;
     text-decoration: none;
+    display: block;
+    line-height: 0;
 }
 
 .header__search {
@@ -532,6 +557,7 @@
     padding-left: 16px;
     line-height: 24px;
     position: relative;
+    z-index: 1;
     cursor: pointer;
 }
 
@@ -623,6 +649,7 @@
     position: relative;
     padding: 0 8px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .header__cart-icon {
@@ -706,7 +733,7 @@
 
 .header__cart-list-item {
     /* Khi màn hình bị co nhỏ theo chiều ngang thì vẫn hiện đầy đủ nội dung */
-    height: 56vh;
+    max-height: 56vh;
     overflow-y: auto;
     padding-left: 0;
     list-style: none;
@@ -872,6 +899,57 @@
     color: var(--text-color);
 }
 
+/* HEADER SORT BAR */
+
+.header__sort-bar {
+    position: fixed;
+    display: none;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    height: var(--header-sort-bar-height);
+    background-color: var(--white-color);
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.header__sort-item {
+    flex: 1;
+}
+
+.header__sort-item--active .header__sort-link {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.header__sort-link {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    line-height: var(--header-sort-bar-height);
+    text-align: center;
+    display: block;
+    height: 100%;
+}
+
+.header__sort-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 60%;
+    border-left: 1px solid #e5e5e5;
+}
+
+.header__sort-item:first-child .header__sort-link::before {
+    display: none;
+}
+
 /* APP CONTAINER */
 
 .app__container {
@@ -921,9 +999,6 @@
     border-color: transparent transparent transparent var(--primary-color);
 }
 
-.category-item {
-}
-
 .category-item__link {
     display: block;
     padding: 6px 24px;
@@ -942,6 +1017,62 @@
     /* Animation sẽ di chuyển đến vị trí right: -4px */
     right: -4px;
     color: var(--primary-color);
+}
+
+/* MOBILE CATEGORY */
+
+.mobile-category {
+    display: none;
+}
+
+.mobile-category__list {
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+/* Ẩn thanh scroll bar kéo ngang */
+.mobile-category__list::-webkit-scrollbar {
+    display: none;
+}
+
+.mobile-category__item {
+    flex-shrink: 0;
+    margin-right: 12px;
+}
+
+.mobile-category__item:nth-of-type(3n + 1) .mobile-category__link {
+    background-color: #87afd8;
+}
+.mobile-category__item:nth-of-type(3n + 2) .mobile-category__link {
+    background-color: #76c9bd;
+}
+.mobile-category__item:nth-of-type(3n + 3) .mobile-category__link {
+    background-color: #88cf81;
+}
+
+.mobile-category__link {
+    --line-height: 2rem;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    width: 110px;
+    padding: 0 5px;
+    line-height: var(--line-height);
+    height: calc(var(--line-height) * 2);
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+    border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Sort, filter */
@@ -1202,6 +1333,7 @@
 
 .home-product__pagination {
     margin: 48px 0 32px;
+    padding-left: 0;
 }
 
 /* FOOTER */

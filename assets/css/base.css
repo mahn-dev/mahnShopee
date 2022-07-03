@@ -8,6 +8,7 @@
 
     --header-height: 120px;
     --navbar-height: 33px;
+    --header-sort-bar-height: 46px;
     --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
 }
 
@@ -20,19 +21,6 @@ html {
     line-height: 1.6rem;
     font-family: "Poppins", sans-serif;
     box-sizing: border-box;
-}
-
-.grid {
-    /*  -Khi màn hình có kích thước >1200px thì web chỉ hiển thị tối đa 1200px 
-        -khi màn hình có kích thước <1200px thì web sẽ hiển thị hết 100% chiều dài */
-    width: 1200px;
-    max-width: 100%;
-    /* Căn giữa khối này khi nằm trong 1 khối khác */
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
 }
 
 .grid__row {
@@ -202,9 +190,6 @@ html {
 
 .select-input:hover .select-input__list {
     display: block;
-}
-
-.select-input__item {
 }
 
 .select-input__link {
